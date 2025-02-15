@@ -1,44 +1,44 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador</title>
+    <title>Cuenta Regresiva</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 50px;
+            background-color: #f4f4f4;
         }
         h1 {
             color: #333;
         }
-        #counter {
+        #countdown {
             font-size: 2em;
+            font-weight: bold;
             margin: 20px;
-        }
-        button {
-            font-size: 1em;
-            padding: 10px 20px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
+            color: #d9534f;
         }
     </style>
 </head>
 <body>
-    <h1>Contador de Clics</h1>
-    <p id="counter">0</p>
-    <button onclick="increaseCounter()">Aumentar</button>
+    <h1>Cuenta Regresiva para el Lanzamiento</h1>
+    <p id="countdown">Cargando...</p>
 
     <script>
-        let count = 0;
-        function increaseCounter() {
-            count++;
-            document.getElementById("counter").textContent = count;
-        }
-    </script>
-</body>
+        function actualizarCuentaRegresiva() {
+            // Fecha objetivo: 20 de febrero de 2025
+            const fechaObjetivo = new Date("Feb 20, 2025 00:00:00").getTime();
+
+            const intervalo = setInterval(function() {
+                const ahora = new Date().getTime();
+                const tiempoRestante = fechaObjetivo - ahora;
+
+                if (tiempoRestante < 0) {
+                    document.getElementById("countdown").innerHTML = "¡Lanzamiento realizado!";
+                    clearInterval(intervalo);
+          
+
 </html>
